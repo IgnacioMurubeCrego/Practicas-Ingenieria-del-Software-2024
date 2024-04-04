@@ -6,25 +6,22 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainScreenController">
+<AnchorPane prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainScreenController">
    <children>
-      <ButtonBar layoutX="5.0" layoutY="346.0" prefHeight="40.0" prefWidth="389.0">
+      <ButtonBar layoutX="53.0" layoutY="525.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="106.0" prefWidth="394.0">
         <buttons>
           <Button mnemonicParsing="false" text="Informes" />
-            <Button layoutX="135.0" layoutY="17.0" mnemonicParsing="false" text="Tarjeta" />
-            <Button layoutX="48.0" layoutY="17.0" mnemonicParsing="false" text="Emergencias" />
-            <Button layoutX="31.0" layoutY="17.0" mnemonicParsing="false" text="Ajustes" />
+            <Button mnemonicParsing="false" text="Tarjeta" />
+            <Button mnemonicParsing="false" text="Emergencias" />
+            <Button mnemonicParsing="false" text="Ajustes" />
         </buttons>
       </ButtonBar>
-      <Pane layoutX="133.0" layoutY="130.0" prefHeight="94.0" prefWidth="106.0" />
-      <ScrollPane layoutX="100.0" layoutY="240.0" prefHeight="106.0" prefWidth="200.0" vbarPolicy="NEVER">
-        <content>
+      <ScrollPane layoutX="139.0" layoutY="391.0" prefHeight="106.0" prefWidth="200.0" vbarPolicy="NEVER">
+         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="114.0" prefWidth="394.0">
                <children>
                   <ImageView fitHeight="81.0" fitWidth="69.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -47,20 +44,22 @@
                         <Image url="@../../../img/options_icon.png" />
                      </image>
                   </ImageView>
-                  <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="390.0" />
+                  <VBox layoutX="-25.0" layoutY="-18.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="131.0" prefWidth="333.0" />
                </children>
             </AnchorPane>
-        </content>
+         </content>
       </ScrollPane>
-      <ImageView fitHeight="60.0" fitWidth="69.0" layoutX="88.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="106.0" fitWidth="119.0" layoutX="88.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/DocDocGo_icon.png" />
          </image>
       </ImageView>
-      <Text layoutX="88.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hola Usuario" wrappingWidth="89.60002441406232">
+      <Text layoutX="94.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hola Usuario," wrappingWidth="123.19999999999982">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Text>
+      <Text layoutX="94.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿En qué podemos ayudarte?" wrappingWidth="156.80003662109357" />
+      <Text layoutX="77.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Te puede interesar" wrappingWidth="156.80003662109357" />
    </children>
 </AnchorPane>

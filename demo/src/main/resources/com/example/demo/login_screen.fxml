@@ -15,12 +15,12 @@
          <font>
             <Font size="24.0" />
          </font></Text>
-      <TextField layoutX="155.0" layoutY="281.0" prefHeight="32.0" prefWidth="169.0" />
+      <TextField fx:id="usernameTxtf" layoutX="155.0" layoutY="281.0" prefHeight="32.0" prefWidth="169.0" />
       <Text layoutX="155.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" wrappingWidth="149.5999999999999">
          <font>
             <Font size="24.0" />
          </font></Text>
-      <TextField layoutX="155.0" layoutY="344.0" prefHeight="32.0" prefWidth="170.0" />
+      <TextField fx:id="passwordTxtf" layoutX="155.0" layoutY="344.0" prefHeight="32.0" prefWidth="170.0" />
       <Button layoutX="155.0" layoutY="388.0" mnemonicParsing="false" onAction="#onRegisterBtnClick" prefHeight="32.0" prefWidth="94.0" text="Register">
          <font>
             <Font size="18.0" />
