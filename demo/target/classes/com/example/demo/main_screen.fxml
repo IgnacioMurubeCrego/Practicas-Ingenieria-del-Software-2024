@@ -14,10 +14,10 @@
    <children>
       <ButtonBar layoutX="53.0" layoutY="525.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="106.0" prefWidth="394.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Informes" />
-            <Button mnemonicParsing="false" text="Tarjeta" />
-            <Button mnemonicParsing="false" text="Emergencias" />
-            <Button mnemonicParsing="false" text="Ajustes" />
+          <Button fx:id="reportsBtn" mnemonicParsing="false" onAction="#OnReportsBtnClick" text="Informes" />
+            <Button fx:id="vcardBtn" mnemonicParsing="false" text="Tarjeta" />
+            <Button fx:id="emergencyBtn" mnemonicParsing="false" onAction="#OnEmergencyNumberBtnClick" text="Emergencias" />
+            <Button fx:id="configBtn" mnemonicParsing="false" text="Ajustes" />
         </buttons>
       </ButtonBar>
       <ScrollPane layoutX="139.0" layoutY="391.0" prefHeight="106.0" prefWidth="200.0" vbarPolicy="NEVER">
