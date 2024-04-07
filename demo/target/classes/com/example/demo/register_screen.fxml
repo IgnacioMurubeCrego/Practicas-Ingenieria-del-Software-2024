@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.StageController">
+   <children>
+      <Text layoutX="69.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username :" wrappingWidth="190.39995117187505">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <TextField id="usernameTxtf" fx:id="usernameTxtf" layoutX="155.0" layoutY="281.0" prefHeight="32.0" prefWidth="169.0" />
+      <Text layoutX="69.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" wrappingWidth="149.5999999999999">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <TextField id="passwordTxtF" fx:id="passwordTxtf" layoutX="155.0" layoutY="344.0" prefHeight="32.0" prefWidth="170.0" />
+      <Button id="registerNewUserBtn" layoutX="192.0" layoutY="469.0" mnemonicParsing="false" onAction="#onBtnClick" prefHeight="32.0" prefWidth="94.0" text="Register">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <ImageView fitHeight="168.0" fitWidth="150.0" layoutX="165.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/DocDocGo_icon.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="155.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DocDocGo" wrappingWidth="190.39995117187505">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="69.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password :" wrappingWidth="237.5999999999999">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField id="confirmPasswordTxtf" fx:id="confirmPasswordTxtf"  layoutX="154.0" layoutY="408.0" prefHeight="32.0" prefWidth="170.0" />
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

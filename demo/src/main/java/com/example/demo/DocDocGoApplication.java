@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class DocDocGoApplication extends Application {
 
-    public static Scene currentScene;
     public static Stage currentStage;
 
     @Override
@@ -17,11 +16,6 @@ public class DocDocGoApplication extends Application {
         currentStage = new Stage();
         StageController controller = new StageController();
         controller.loadStage("login_screen.fxml");
-    }
-
-    public static void showScene(Stage stage){
-        stage.setScene(currentScene);
-        stage.show();
     }
 
     public static void main(String[] args) {launch();}
