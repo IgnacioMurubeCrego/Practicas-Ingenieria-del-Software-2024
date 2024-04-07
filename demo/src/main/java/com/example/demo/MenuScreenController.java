@@ -1,27 +1,21 @@
 package com.example.demo;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 
 import static com.example.demo.DocDocGoApplication.currentStage;
 
-public class MainScreenController {
+public class MenuScreenController {
 
     public void OnReportsBtnClick(ActionEvent actionEvent) {
         try {
-            Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("reports_screen.fxml"));
-            Scene mainScene = new Scene(fxmlLoader.load(), 500, 720);
-            stage.setScene(mainScene);
-            stage.show();
-            // Close the current login screen
+            Scene reportsScene = new Scene(fxmlLoader.load(), 500, 720);
             currentStage.close();
+            currentStage.setScene(reportsScene);
+            currentStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,13 +23,11 @@ public class MainScreenController {
 
     public void OnEmergencyNumberBtnClick(ActionEvent actionEvent) {
         try {
-            Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("emergencyNum_screen.fxml"));
-            Scene mainScene = new Scene(fxmlLoader.load(), 500, 720);
-            stage.setScene(mainScene);
-            stage.show();
-            // Close the current login screen
+            Scene EmergencyNumScene = new Scene(fxmlLoader.load(), 500, 720);
             currentStage.close();
+            currentStage.setScene(EmergencyNumScene);
+            currentStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
