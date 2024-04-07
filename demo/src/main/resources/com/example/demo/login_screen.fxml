@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginScreenController">
+<AnchorPane prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.StageController">
    <children>
       <Text layoutX="155.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username :" wrappingWidth="190.39995117187505">
          <font>
@@ -21,19 +21,19 @@
             <Font size="24.0" />
          </font></Text>
       <TextField fx:id="passwordTxtf" layoutX="155.0" layoutY="344.0" prefHeight="32.0" prefWidth="170.0" />
-      <Button layoutX="155.0" layoutY="388.0" mnemonicParsing="false" onAction="#onRegisterBtnClick" prefHeight="32.0" prefWidth="94.0" text="Register">
+      <Button id="registerBtn" layoutX="155.0" layoutY="388.0" mnemonicParsing="false" onAction="#onBtnClick" prefHeight="32.0" prefWidth="94.0" text="Register">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="256.0" layoutY="388.0" mnemonicParsing="false" onAction="#onLoginBtnClick" text="Login">
+      <Button id="loginBtn" layoutX="256.0" layoutY="388.0" mnemonicParsing="false" onAction="#onBtnClick" text="Login">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="154.0" layoutY="443.0" mnemonicParsing="false" onAction="#onLoginProBtnClick" prefHeight="40.0" prefWidth="170.0" text="Login Profesional ">
+      <Button id="loginProBtn" layoutX="154.0" layoutY="443.0" mnemonicParsing="false" onAction="#onBtnClick" prefHeight="40.0" prefWidth="170.0" text="Login Profesional ">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="154.0" layoutY="501.0" mnemonicParsing="false" onAction="#onLoginAdminBtnClick" prefHeight="40.0" prefWidth="170.0" text="Login Admin">
+      <Button id="loginAdminBtn" layoutX="154.0" layoutY="501.0" mnemonicParsing="false" onAction="#onBtnClick" prefHeight="40.0" prefWidth="170.0" text="Login Admin">
          <font>
             <Font size="18.0" />
          </font></Button>

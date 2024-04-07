@@ -15,14 +15,11 @@ public class DocDocGoApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         currentStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(DocDocGoApplication.class.getResource("login_screen.fxml"));
-        currentScene = new Scene(fxmlLoader.load(), 500, 720);
-        currentStage.setTitle("DocDocGo");
-        showScene(currentStage);
+        StageController controller = new StageController();
+        controller.loadStage("login_screen.fxml");
     }
 
     public static void showScene(Stage stage){
-
         stage.setScene(currentScene);
         stage.show();
     }
