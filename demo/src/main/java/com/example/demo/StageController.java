@@ -8,10 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static com.example.demo.DocDocGoApplication.currentStage;
 
 public class StageController {
+
+    private UserDataAccessor dataAccessor;
 
     @FXML
     private TextField usernameTxtf, passwordTxtf, confirmPasswordTxtf;
@@ -60,11 +63,27 @@ public class StageController {
         String password = passwordTxtf.getText();
         String confirmPassword = confirmPasswordTxtf.getText();
 
-        if(!(username.isEmpty()) & !(password.isEmpty()) & password.equals(confirmPassword)){
+        if (!(username.isEmpty()) & !(password.isEmpty()) & password.equals(confirmPassword)) {
             // Add new user to database:
 
         }
+    }
 
+    /**
+     * Establishes connection with MySQL database and retrieves user's data.
+     */
+    private void login() {
+        String username = usernameTxtf.getText();
+        String password = passwordTxtf.getText();
+        // URL Pending to be established
+        String urlMySQL = "";
+        try {
+            dataAccessor = new UserDataAccessor("User", urlMySQL, username, password);
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -77,6 +96,7 @@ public class StageController {
         switch (id) {
             case "loginBtn", "loginProBtn", "loginAdminBtn" -> {
                 if (authenticateUser())
+                    login();
                     loadStage("menu_screen.fxml");
             }
             case "registerBtn" -> loadStage("register_screen.fxml");
@@ -96,6 +116,5 @@ public class StageController {
             case "logOutBtn" -> loadStage("login_screen.fxml");
         }
     }
-
 
 }

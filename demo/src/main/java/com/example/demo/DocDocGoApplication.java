@@ -10,11 +10,12 @@ import java.io.IOException;
 public class DocDocGoApplication extends Application {
 
     public static Stage currentStage;
+    public static StageController controller;
 
     @Override
     public void start(Stage stage) throws IOException {
         currentStage = new Stage();
-        StageController controller = new StageController();
+        controller = new StageController();
         controller.loadStage("login_screen.fxml");
     }
 
