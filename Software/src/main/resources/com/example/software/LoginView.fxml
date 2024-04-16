@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software.LoginViewController">
+   <children>
+      <TextField fx:id="txtUsername" layoutX="85.0" layoutY="198.0" promptText="Username" />
+      <TextField fx:id="txtPassword" layoutX="85.0" layoutY="322.0" promptText="Password" />
+      <Button fx:id="btnAcceder" layoutX="177.0" layoutY="425.0" mnemonicParsing="false" onAction="#showHome" text="acceder" />
+      <Text fill="WHITE" layoutX="122.0" layoutY="140.0" text="Iniciar Sesion">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="530.0" layoutY="139.0" text="¿No estás registrado?">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnRegistro" layoutX="598.0" layoutY="224.0" mnemonicParsing="false" onAction="#MostrarViewRegistro" prefHeight="15.0" prefWidth="224.0" text="Registrarse">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

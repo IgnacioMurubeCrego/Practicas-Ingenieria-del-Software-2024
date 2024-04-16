@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software.RegistroViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="100.0" layoutY="50.0" prefHeight="898.0" prefWidth="358.0" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Text fill="#252323" text="Registro">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtNombre" promptText="Nombre">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
+            <TextField fx:id="txtApellidos" promptText="Apellidos">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="txtBirth" promptText="Año de nacimiento">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="txtGenre" promptText="Genero">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="txtMail" promptText="Correo electronico">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="txtPassword" promptText="Contraseña">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="btnAcceder" onAction="#showHome" text="Aceptar">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+      <Text fill="#1e1d1d" layoutX="516.0" layoutY="110.0" text="¿Ya estás registrado?">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnLogin" layoutX="623.0" layoutY="156.0" mnemonicParsing="false" onAction="#MostrarViewInicioSesion" prefHeight="25.0" prefWidth="149.0" text="Login">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
