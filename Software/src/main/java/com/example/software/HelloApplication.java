@@ -11,11 +11,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This Singleton class acts as the center of DocDocGo's UI
+ * and provides a view frame reference accessible by all view controllers.
+ */
 public class HelloApplication extends Application {
+
+    // Singleton Instance.
     private static final HelloApplication instance = new HelloApplication();
     public static HelloApplication getInstance() {
         return instance;
     }
+
     @Override
     public void start(Stage primaryStage) {
         Parent root;
@@ -27,6 +34,7 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
+
     @FXML
     void mostrarPagina(ActionEvent event, FXMLLoader fxmlLoader) {
         try {
@@ -38,7 +46,6 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
-
 
     @FXML
     public void cerrarPagina(ActionEvent event, Button btnEmpezar) {

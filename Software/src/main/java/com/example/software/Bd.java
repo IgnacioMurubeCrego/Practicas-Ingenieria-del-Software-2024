@@ -6,10 +6,13 @@ import javafx.scene.control.TextField;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * This Singleton class acts as the connection and data checker with DocDocGo's MySQL database.
+ *  It provides a database instance accessible by all classes.
+ */
 public class Bd {
     private static Connection conexion = null;
     private static Statement sentenciaSQL = null;
-
     private static Bd instance;
 
     public Bd() {
@@ -40,7 +43,6 @@ public class Bd {
         return instance;
     }
 
-
     final void desconectar() throws SQLException{
         try {
             sentenciaSQL.close();
@@ -50,10 +52,9 @@ public class Bd {
         }
     }
 
-
-
     // Añadir un usuario nuevo al registrarse
-    public void guardarUsuario(TextField nombre, TextField apellidos, TextField birth, TextField gender, TextField email, TextField password) {
+    public void guardarUsuario(TextField nombre, TextField apellidos, TextField birth,
+                               TextField gender, TextField email, TextField password) {
 
         int result;
         String sql;
@@ -74,7 +75,10 @@ public class Bd {
 
 
             // Sentencia para añadir usuarios a la tabla
-            sql = "INSERT INTO usuarios (userName, userLastname, userBirth, userGender, userMail, userPassword) VALUES ('" + nombreAux + "', '" + apellidosAux + "', '" + birthAux +"',  '" + genderAux + "','" + emailAux + "', '" + passwordAux + "')";
+            sql = "INSERT INTO usuarios (userName, userLastname, userBirth, userGender, " +
+                    "userMail, userPassword) VALUES ('" + nombreAux + "', '" + apellidosAux
+                    + "', '" + birthAux +"',  '" + genderAux + "','" + emailAux + "', '" + passwordAux + "')";
+
             result = sentenciaSQL.executeUpdate(sql);
 
             // Se incrementa el valor de los personajes almacenados en el arrayList
@@ -86,7 +90,6 @@ public class Bd {
             System.out.println("ERROR al guardar el usuario");
         }
     }
-
 
     public int iniciarSesion(TextField email, TextField password, Label txtError) {
 
@@ -105,7 +108,8 @@ public class Bd {
             sentenciaSQL = conexion.createStatement();
 
             // Sentencia para añadir usuarios a la tabla
-            sql = "SELECT userMail, userPassword, idAdmin FROM usuarios where userMail = '" + emailAux + "' and userPassword = '" + passwordAux + "'";
+            sql = "SELECT userMail, userPassword, idAdmin FROM usuarios where userMail = '" +
+                    emailAux + "' and userPassword = '" + passwordAux + "'";
             result = sentenciaSQL.executeQuery(sql);
 
             // Siempre se ejecuta cada vez que encuentre un dato buscado en la secuencia
@@ -142,39 +146,6 @@ public class Bd {
         return encontrado;
     }
 
-
-    public boolean iniciarSesion2(TextField email, TextField password) {
-        boolean encontrado = false;
-        ResultSet result;
-        String sql;
-        String emailAux = email.getText();
-        String passwordAux = password.getText();
-
-        try {
-            conectar();
-
-            sentenciaSQL = conexion.createStatement();
-
-            // Sentencia para añadir usuarios a la tabla
-            sql = "SELECT userMail, userPassword FROM usuarios where userMail = '" + emailAux + "' and userPassword = '" + passwordAux + "'";
-            result = sentenciaSQL.executeQuery(sql);
-
-            // Siempre se ejecuta cada vez que encuentre un dato buscado en la secuencia
-            if (result.next()) {
-                System.out.println("User found");
-                encontrado = true;
-            }
-
-
-           // desconectar();
-
-        } catch (SQLException ex) {
-            System.out.println("ERROR al encontrar el usuario");
-        }
-
-        return encontrado;
-    }
-
     public int getIdUser(TextField email, TextField password) {
 
         int id = 0;
@@ -191,7 +162,8 @@ public class Bd {
             sentenciaSQL = conexion.createStatement();
 
             // Sentencia para añadir usuarios a la tabla
-            sql = "SELECT idUsuario FROM usuarios where userMail = '" + emailAux + "' and userPassword = '" + passwordAux + "'";
+            sql = "SELECT idUsuario FROM usuarios where userMail = '" + emailAux
+                    + "' and userPassword = '" + passwordAux + "'";
             result = sentenciaSQL.executeQuery(sql);
 
             // Siempre se ejecuta cada vez que encuentre un dato buscado en la secuencia
@@ -235,7 +207,8 @@ public class Bd {
         }
     }
 
-    public void mostrarUsuario(int idUser, Label userName, Label userSurname, Label userBirth, Label userGender, Label userMail) {
+    public void mostrarUsuario(int idUser, Label userName, Label userSurname, Label userBirth,
+                               Label userGender, Label userMail) {
 
         ResultSet result;
         String sql;
@@ -277,14 +250,14 @@ public class Bd {
         String idUserAux = txtIdUserC.getText();
         String dateAux = txtDateC.getText();
 
-
         try {
 
             conectar();
             sentenciaSQL = conexion.createStatement();
 
             // Sentencia para añadir usuarios a la tabla
-            sql = "INSERT INTO citas (citaDescripcion, idDoc, idPaciente, citaFecha) VALUES ('" + nombreAux + "', '" + idDocAux + "', '" + idUserAux + "', '" + dateAux + "')";
+            sql = "INSERT INTO citas (citaDescripcion, idDoc, idPaciente, citaFecha) VALUES ('" +
+                    nombreAux + "', '" + idDocAux + "', '" + idUserAux + "', '" + dateAux + "')";
             result = sentenciaSQL.executeUpdate(sql);
 
             // Se incrementa el valor de los personajes almacenados en el arrayList

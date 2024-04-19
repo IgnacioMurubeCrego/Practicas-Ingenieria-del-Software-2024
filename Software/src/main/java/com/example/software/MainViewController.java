@@ -8,18 +8,21 @@ import javafx.scene.control.Button;
 public class MainViewController {
 
     @FXML
-    private Button btnShowL, btnShowR;
+    private Button btnShowL, btnShowR; // Buttons which will appear in as 'SIGN UP' and 'LOGIN'
 
+    // Main view Singleton instance.
     HelloApplication main = HelloApplication.getInstance();
 
-    // Dirección de las diferentes vistas que se podrán usar
-    FXMLLoader loaderLogin = new FXMLLoader(getClass().getResource("LoginView.fxml"));
-    FXMLLoader loaderRegistro = new FXMLLoader(getClass().getResource("RegistroView.fxml"));
+    // FXML loaders of both views accesible from application initial view.
+    private final FXMLLoader loaderLogin = new FXMLLoader(getClass().getResource("LoginView.fxml"));
+    private final FXMLLoader loaderRegistro = new FXMLLoader(getClass().getResource("RegistroView.fxml"));
 
+    /**
+     * @param event Changes main view to user 'LOGIN' view.
+     */
     @FXML
     void showViewLogin(ActionEvent event) {
         try {
-            // creamos objeto del Main para poder llamar al metodo start2
             main.cerrarPagina(event, btnShowL);
             main.mostrarPagina(event, loaderLogin);
 
@@ -28,10 +31,12 @@ public class MainViewController {
         }
     }
 
+    /**
+     * @param event Changes main view to new user 'REGISTER' view.
+     */
     @FXML
     void showViewRegistro(ActionEvent event) {
         try {
-            // creamos objeto del Main para poder llamar al metodo start2
             main.cerrarPagina(event, btnShowR);
             main.mostrarPagina(event, loaderRegistro);
 

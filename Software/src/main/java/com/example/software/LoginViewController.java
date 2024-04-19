@@ -31,6 +31,7 @@ public class LoginViewController {
     // Instancias de FXMLLoader para diferentes vistas
     FXMLLoader loaderPrincipal = new FXMLLoader(getClass().getResource("HomeView.fxml"));
     FXMLLoader loaderRegistro = new FXMLLoader(getClass().getResource("RegistroView.fxml"));
+
     // Vistas de doctor/admin
     FXMLLoader loaderAdminLogin = new FXMLLoader(getClass().getResource("HomeView.fxml"));
     FXMLLoader loaderDocLogin = new FXMLLoader(getClass().getResource("HomeView.fxml"));

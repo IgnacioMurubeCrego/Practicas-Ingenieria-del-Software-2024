@@ -11,6 +11,12 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/**
+ * Parent class. Provides basic structure for database information control classes.
+ * @see Home
+ * @see PedirCita
+ * @see Perfil
+ */
 public class AppNavegacion {
 
     int idUsuario = 0;
@@ -53,7 +59,7 @@ public class AppNavegacion {
             // Recorremos la lista de botones del array
             for (int i = 0; i < listButtonMenu.length; i++) {
 
-                // Comprobamos caul es el botón que se ha presionado
+                // Comprobamos cual es el botón que se ha presionado
                 if (event.getSource() == listButtonMenu[i]) {
 
                     // Cerramos la vista actual para mostrar la siguiente
