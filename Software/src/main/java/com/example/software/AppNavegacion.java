@@ -19,7 +19,7 @@ public class AppNavegacion {
     public TextField txtId;
 
     Bd baseDatos = Bd.getInstance();
-    HelloApplication main = HelloApplication.getInstance();
+    Main main = Main.getInstance();
 
     //------------------------------------------------------------------------
     // PARA LAS BIBLIOTECAS

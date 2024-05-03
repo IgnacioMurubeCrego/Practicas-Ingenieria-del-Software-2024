@@ -9,6 +9,8 @@ import java.util.ArrayList;
 public class Bd {
     private static Connection conexion = null;
     private static Statement sentenciaSQL = null;
+    private static PreparedStatement preparedSQL = null;
+
 
     private static Bd instance;
 
@@ -43,39 +45,35 @@ public class Bd {
 
     final void desconectar() throws SQLException{
         try {
-            sentenciaSQL.close();
+
+            if(sentenciaSQL != null) {sentenciaSQL.close();};
+            if(preparedSQL != null) {preparedSQL.close();};
+
             conexion.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-
-
     // Añadir un usuario nuevo al registrarse
-    public void guardarUsuario(TextField nombre, TextField apellidos, TextField birth, TextField gender, TextField email, TextField password) {
-
-        int result;
-        String sql;
-
-        String nombreAux = nombre.getText();
-        String apellidosAux = apellidos.getText();
-        String birthAux = birth.getText();
-        String genderAux = gender.getText();
-        String emailAux = email.getText();
-        String passwordAux = password.getText();
-
+    public void guardarUsuario(Usuario usuario) {
+        // ANTES TENEMOS QUE VERIFICAR SI EL USUARIO EXISTE
         try {
-
-            // ANTES TENEMOS QUE VERIFICAR SI EL USUARIO EXISTE
-
             conectar();
-            sentenciaSQL = conexion.createStatement();
-
 
             // Sentencia para añadir usuarios a la tabla
-            sql = "INSERT INTO usuarios (userName, userLastname, userBirth, userGender, userMail, userPassword) VALUES ('" + nombreAux + "', '" + apellidosAux + "', '" + birthAux +"',  '" + genderAux + "','" + emailAux + "', '" + passwordAux + "')";
-            result = sentenciaSQL.executeUpdate(sql);
+            preparedSQL = conexion.prepareStatement(
+                    "INSERT INTO usuarios "
+                            + "(userName, userLastname, userBirth, userGender, userMail, userPassword) "
+                            + "VALUES (?, ?, ?, ?, ?, ?)");
+
+            preparedSQL.setString(1, usuario.nombre);
+            preparedSQL.setString(2, usuario.apellidos);
+            preparedSQL.setString(3, usuario.birth);
+            preparedSQL.setString(4, usuario.gender);
+            preparedSQL.setString(5, usuario.email);
+            preparedSQL.setString(6, usuario.password);
+            preparedSQL.executeUpdate();
 
             // Se incrementa el valor de los personajes almacenados en el arrayList
             System.out.println("Usuario añadido");
@@ -84,6 +82,7 @@ public class Bd {
 
         } catch (SQLException ex) {
             System.out.println("ERROR al guardar el usuario");
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -125,12 +124,12 @@ public class Bd {
                     System.out.println("Admin found");
                     encontrado = 3;
                 }
-                /*
+
                 System.out.println("Admin found");
                 encontrado = 1;
-
-                 */
             }
+
+
 
             desconectar();
 
@@ -138,6 +137,7 @@ public class Bd {
             System.out.println("ERROR at login");
             txtError.setText("User or password incorrect");
         }
+
 
         return encontrado;
     }
@@ -166,7 +166,7 @@ public class Bd {
             }
 
 
-           // desconectar();
+            // desconectar();
 
         } catch (SQLException ex) {
             System.out.println("ERROR al encontrar el usuario");

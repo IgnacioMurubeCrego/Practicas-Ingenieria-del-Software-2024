@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software.LoginViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software.LoginViewController">
    <children>
       <ImageView fitHeight="734.0" fitWidth="1185.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,7 +51,7 @@
             <TextField fx:id="titPassword" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="28.0" prefWidth="212.0" promptText="****************" style="-fx-background-color: none; -fx-border-radius: 15; -fx-border-color: black; -fx-text-fill: black;" />
          </children>
       </VBox>
-      <Text layoutX="49.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No account yet? Register now" wrappingWidth="239.82622737523548">
+      <Text fill="#5281f7" layoutX="150.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Register now" wrappingWidth="98.82622737523548">
          <font>
             <Font size="15.0" />
          </font>
@@ -56,5 +62,10 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Text layoutX="36.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No account yet?" wrappingWidth="114.82622737523548">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

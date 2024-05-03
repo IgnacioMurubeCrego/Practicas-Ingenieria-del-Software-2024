@@ -21,7 +21,7 @@ public class RegistroViewController {
 
     // Clase para hacer uso de la base de datos
     Bd baseDatos = Bd.getInstance();
-    HelloApplication main = HelloApplication.getInstance();
+    Main main = Main.getInstance();
 
     //Dirección de las diferentes vistas que se podrán usar
     FXMLLoader loaderLogin = new FXMLLoader(getClass().getResource("LoginView.fxml"));
@@ -49,7 +49,7 @@ public class RegistroViewController {
             // Inserto el nombre del usuario cuando se empieza la partida
             if (!titNombre.getText().isEmpty() && !titUsername.getText().isEmpty() && !titDate.getText().isEmpty() && !titGender.getText().isEmpty() && !titMail.getText().isEmpty() && !titPassword.getText().isEmpty()) {
 
-                baseDatos.guardarUsuario(titNombre, titUsername, titDate, titGender, titMail, titPassword);
+                baseDatos.guardarUsuario(new Usuario(titNombre.getText(), titUsername.getText(), titDate.getText(), titGender.getText(), titMail.getText(), titPassword.getText()));
                 idUser = baseDatos.getIdUser(titMail, titPassword);
                 // Creamos un objeto de la clase HelloApplication para llamar al método cerrarPagina y mostrarPrincipalViewUser
                 main.cerrarPagina(event, btnMostrarViewPrincipal);

@@ -10,7 +10,7 @@ public class MainViewController {
     @FXML
     private Button btnShowL, btnShowR;
 
-    HelloApplication main = HelloApplication.getInstance();
+    Main main = Main.getInstance();
 
     // Dirección de las diferentes vistas que se podrán usar
     FXMLLoader loaderLogin = new FXMLLoader(getClass().getResource("LoginView.fxml"));

@@ -26,7 +26,7 @@ public class LoginViewController {
 
     // Clase para hacer uso de la base de datos
     Bd baseDatos = Bd.getInstance();
-    HelloApplication main = HelloApplication.getInstance();
+    Main main = Main.getInstance();
 
     // Instancias de FXMLLoader para diferentes vistas
     FXMLLoader loaderPrincipal = new FXMLLoader(getClass().getResource("HomeView.fxml"));

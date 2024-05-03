@@ -16,8 +16,4 @@ public class Perfil extends AppNavegacion {
         baseDatos.mostrarUsuario(idUsuario, txtName, txtSurname, txtBirth, txtGender, txtMail);
     }
 
-
-
-
-
 }
