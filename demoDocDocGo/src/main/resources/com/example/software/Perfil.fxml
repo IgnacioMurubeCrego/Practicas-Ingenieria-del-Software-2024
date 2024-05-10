@@ -27,7 +27,12 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label fx:id="txtSurname" prefHeight="35.0" prefWidth="163.0">
+            <Label fx:id="txtSurname" prefHeight="14.0" prefWidth="163.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtShowId" prefHeight="18.0" prefWidth="170.0">
                <font>
                   <Font size="18.0" />
                </font>
